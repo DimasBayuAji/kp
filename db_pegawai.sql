@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Feb 2021 pada 09.52
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.2
+-- Generation Time: Mar 09, 2021 at 09:07 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `absen`
+-- Table structure for table `absen`
 --
 
 CREATE TABLE `absen` (
@@ -39,7 +39,7 @@ CREATE TABLE `absen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `absen`
+-- Dumping data for table `absen`
 --
 
 INSERT INTO `absen` (`id_absen`, `id_pegawai`, `hadir`, `izin`, `tidak_hadir`, `bulan`, `tanggal`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `absen` (`id_absen`, `id_pegawai`, `hadir`, `izin`, `tidak_hadir`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -61,7 +61,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `level`, `log`) VALUES
@@ -72,7 +72,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama`, `level`, `log`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Table structure for table `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -83,7 +83,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data for table `jabatan`
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `golongan`, `tunjangan`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `golongan`, `tunjangan`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `keluarga`
+-- Table structure for table `keluarga`
 --
 
 CREATE TABLE `keluarga` (
@@ -122,18 +122,17 @@ CREATE TABLE `keluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `keluarga`
+-- Dumping data for table `keluarga`
 --
 
 INSERT INTO `keluarga` (`id_keluarga`, `id_pegawai`, `nama`, `nama_keluarga`, `tanggal_lahir`, `tempat_lahir`, `jk`, `sebagai`, `keterangan`, `menikah`, `pekerjaan`) VALUES
 (9, 16, 'Nadia Rheta Fitriani', 'Fahmi Fauzi Kadarmanto', '1999-06-30', 'Kota Bandung', 'L', 'Suami', 'Hidup', 'sudah', 'Project Manager Google'),
-(10, 15, 'Fahmi Fauzi Kadarmanto', 'Nadia Rheta Fitriani', '1999-04-11', 'Kota Bandung', 'P', 'Istri', 'Hidup', 'sudah', 'Product Designer'),
-(11, 13, 'Akbar Hidayatullah Harahap', 'Melani NM', '1996-01-17', 'Kota Bandung', 'P', 'Istri', 'Hidup', 'sudah', 'Selebgram');
+(12, 22, 'Fahmi Fauzi Kadarmanto', 'Nadia Rheta Fitriani', '2020-02-02', 'Kota Bandung', 'P', 'Istri', 'Hidup', 'sudah', 'Product Designer');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kepangkatan`
+-- Table structure for table `kepangkatan`
 --
 
 CREATE TABLE `kepangkatan` (
@@ -146,7 +145,7 @@ CREATE TABLE `kepangkatan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kunjungan`
+-- Table structure for table `kunjungan`
 --
 
 CREATE TABLE `kunjungan` (
@@ -159,7 +158,7 @@ CREATE TABLE `kunjungan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mengajar`
+-- Table structure for table `mengajar`
 --
 
 CREATE TABLE `mengajar` (
@@ -175,7 +174,7 @@ CREATE TABLE `mengajar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
+-- Table structure for table `pegawai`
 --
 
 CREATE TABLE `pegawai` (
@@ -220,19 +219,19 @@ CREATE TABLE `pegawai` (
   `kegemaran` varchar(255) NOT NULL,
   `jurusan` varchar(255) NOT NULL,
   `telp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pegawai`
+-- Dumping data for table `pegawai`
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `id_jabatan`, `nip`, `nama`, `gelar`, `jk`, `foto`, `agama`, `pendidikan`, `nikah`, `alamat`, `kelurahan`, `kecamatan`, `kota`, `provinsi`, `username`, `password`, `tempat_lahir`, `tanggal_lahir`, `status_peg`, `jenis_peg`, `satuan_kerja`, `jabatan_akhir`, `didik_akhir`, `gol_ruang`, `satuan_org`, `kgb`, `pangkat`, `kapreg`, `karis`, `kpe`, `taspen`, `npwp`, `nidn`, `wajah`, `kulit`, `ciri`, `cacat`, `kegemaran`, `jurusan`, `telp`) VALUES
-(13, 0, '1987391734917432', 'Akbar Hidayatullah Harahap', '', 'L', 'foto_1607428712.jpg', 'islam', '', 'sudah', 'Permata Biru ', 'Cinunuk', 'Cibiru', 'Kota Bandung', 'Jawa Barat', 'akbarhahay', 'e10adc3949ba59abbe56e057f20f883e', 'Kota Bandung', '1999-01-11', 'aktif', 'pns', 'UIN SGD Bandung', 'pembina', 'S3', '4a', 'Fakultas Ushuluddin', '2020-12-02', 'pang4', '', '', '', '', '', '', '', '', '', '', '', 'tasawuf', '081345621987'),
-(15, 11, '12313141', 'Fahmi Fauzi Kadarmanto', 'S.T.', '', 'foto_1608989514.jpg', 'islam', '', 'belum', 'JL. Cibangkong No.41/120', 'Cibangkong', 'Batununggal', 'Kota Bandung', 'Jawa Barat', 'fkadarmanto', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'Kota Bandung', '2021-01-27', 'Aktif', 'Capeg', 'UIN SGD Bandung', 'Asisten', 'S3', 'IIIA', 'UIN Sunan Gunung Djati Bandung', '2019-10-25', 'Penata Muda', '1214141', '2315253454331414', '141242343534', '32434767698769878757', '3654', '', '', '', '', '', '', '', '081345621987'),
 (16, 5, '1241414', 'Nadia Rheta Fitriani', 'S.T., M.T.', 'P', 'foto_1608989540.jpg', 'islam', '', 'sudah', 'JL. Pahlawan N0. 53', 'PasirKoja', 'Andir', 'Kota Bandung', 'Jawa Barat', 'nanad21', 'eb89f40da6a539dd1b1776e522459763', 'Kota Bandung', '2003-11-25', 'aktif', 'pengajar', 'Fakultas Ushuluddin', 'pembina', 'S2', '3d', 'Fakultas Ushuluddin', '2018-10-25', 'pang1', '1214141', '72984729843792', '92874982749827492', '8658578646354', '3654765653436', '764653658766587969', 'Bulat', 'Putih', 'pendek, kecil', 'tidak ada', 'Membaca', 'hadis', '081345621987'),
 (18, 0, '124242', 'Ujang', '', 'L', 'foto_1609171880.jpg', 'islam', '', 'sudah', 'JL. Cibangkong No.41/120', 'PasirKoja', 'Andir', 'Asakusa', 'Nagano', 'jangsiujang21', 'a152e841783914146e4bcd4f39100686', 'Kota Bandung', '2019-11-27', 'aktif', 'capeg', 'Fakultas Ushuluddin', 'ast', 'sma', '3a', 'UIN Sunan Gunung Djati Bandung', '2019-10-27', 'pang1', '14141412', '142342452525', '1241415 v', '', '', '', '', '', '', '', '', 'hadis', '19832018401'),
 (19, 0, '196505161993031002', 'Ahmad Gibson Albustomi', 'M.Ag', 'L', 'foto_1610101827.jpg', 'islam', '', 'sudah', 'Cimekar', 'Cimekar', 'Cileunyi', 'Kota Bandung', 'Jawa Barat', 'ahmad.gibson65@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Garut', '1965-05-16', 'aktif', 'pengajar', 'Aqidah Filsafat Islam', 'pembina', 'S2', '4a', 'Universitas Islam Negeri Sunan Gunung Djati Bandung', '2008-03-01', 'pang5', 'F. 005291', '', '', '', '262108350429000', '2016056501', '', '', '', '', '', 'filsafat', '082321512222'),
-(20, 0, '113333555555', 'Masdim', 'S.Pg. , M.Sg', 'L', 'foto_1613622844.png', 'islam', '', 'belum', 'komplek GBI', 'Bojongsoang', 'Bojongsoang', 'kab bandung', 'Jawa Barat', 'masdimas', 'bb9e63fa9a84d3979e9ee0e746ca88a6', 'Sleman', '1999-01-19', 'aktif', 'pengajar', 'OmBud', 'asta', 'S2', '4e', 'OmBud', '2021-02-18', 'pang4', '123123', '123123', '123123', '123123', '123123', '123123', 'normal', 'sawo matang', 'tangannya dua', 'normal', 'Menghilang', 'hadis', '085580085580');
+(20, 0, '113333555555', 'Masdim', 'S.Pg. , M.Sg', 'L', 'foto_1613622844.png', 'islam', '', 'belum', 'komplek GBI', 'Bojongsoang', 'Bojongsoang', 'kab bandung', 'Jawa Barat', 'masdimas', 'bb9e63fa9a84d3979e9ee0e746ca88a6', 'Sleman', '1999-01-19', 'aktif', 'pengajar', 'OmBud', 'asta', 'S2', '4e', 'OmBud', '2021-02-18', 'pang4', '123123', '123123', '123123', '123123', '123123', '123123', 'normal', 'sawo matang', 'tangannya dua', 'normal', 'Menghilang', 'hadis', '085580085580'),
+(21, 0, '16899879098098', 'kris', 'S.T.', 'L', 'foto_1614225223.png', 'islam', '', 'sudah', 'Cimekar', 'Nagano', 'Asakusa', 'Asakusa', 'Nagano', 'kriskriskris', '', 'Asakusa', '2021-02-23', 'aktif', 'pengajar', 'Fakultas Ushuluddin', 'pembina', 'S2', '4a', 'Universitas Islam Negeri Sunan Gunung Djati Bandung', '2020-01-24', 'pang4', '12131321', '12414132', '2142532525', '1425254354235', '1432342534', '2142424535435', 'kotak', '', '', '', '', 'hadis', '088888888888'),
+(22, 0, '19999991001028391', 'Fahmi Fauzi Kadarmanto', 'S.T', 'Laki-Laki', 'foto_1614753845.jpg', 'Islam', '', 'Belum Menikah', 'JL. Cibangkong No.41/120', 'Cibangkong', 'Batununggal', 'Kota Bandung', 'Jawa Barat', 'fkadarmanto', '', 'Kota Bandung', '1999-06-30', 'Cuti', 'Tenaga Pengajar', 'UIN SGD Bandung', 'Pembina', 'S3', 'IVB', 'Fakultas Ushuluddin', '2019-02-02', 'Pembina', '1873981794619418', '98173497491874198749', '981749243981749817491', '9814981497491874917', '981734987498174198379', '98749827492743972497', 'Bulat', 'Putih', 'Pendek, Sedikit gemuk', 'tidak ada', 'Membaca', 'Studi Agama-Agama', '088218039696');
 
 -- --------------------------------------------------------
 
@@ -258,11 +257,10 @@ INSERT INTO `pelatihan` (`id_pelatihan`, `id_pegawai`, `nama`, `nama_sertif`, `p
 (11, 21, 'kris', 'sertif ahay', 'sertif_1614234910.pdf', '2021-02-10', 'itulah biasalah'),
 (21, 22, 'Fahmi Fauzi Kadarmanto', 'Sertifikat Pelatihan Tenaga Kerja', 'sertif_1615274731.pdf', '2021-03-10', 'Ini adalah SK Pelatihan Olahraga bagi Fahmi Fauzi Kadarmanto');
 
--- 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pendidikan`
+-- Table structure for table `pendidikan`
 --
 
 CREATE TABLE `pendidikan` (
@@ -299,7 +297,7 @@ INSERT INTO `pendidikan` (`id_pendidikan`, `id_pegawai`, `nama`, `tk`, `tahun_tk
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tpp`
+-- Table structure for table `tpp`
 --
 
 CREATE TABLE `tpp` (
@@ -313,7 +311,7 @@ CREATE TABLE `tpp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tpp`
+-- Dumping data for table `tpp`
 --
 
 INSERT INTO `tpp` (`id_tpp`, `id_pegawai`, `jumlah_tpp`, `jumlah_potongan`, `bulan_t`, `tahun`, `tgl`) VALUES
@@ -326,55 +324,56 @@ INSERT INTO `tpp` (`id_tpp`, `id_pegawai`, `jumlah_tpp`, `jumlah_potongan`, `bul
 --
 
 --
--- Indeks untuk tabel `absen`
+-- Indexes for table `absen`
 --
 ALTER TABLE `absen`
   ADD PRIMARY KEY (`id_absen`);
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indeks untuk tabel `keluarga`
+-- Indexes for table `keluarga`
 --
 ALTER TABLE `keluarga`
   ADD PRIMARY KEY (`id_keluarga`),
   ADD KEY `fk_profil_keluarga` (`id_pegawai`);
 
 --
--- Indeks untuk tabel `kepangkatan`
+-- Indexes for table `kepangkatan`
 --
 ALTER TABLE `kepangkatan`
   ADD PRIMARY KEY (`id_kepangkatan`),
   ADD KEY `fk_kepangkatan` (`id_pegawai`);
 
 --
--- Indeks untuk tabel `kunjungan`
+-- Indexes for table `kunjungan`
 --
 ALTER TABLE `kunjungan`
   ADD PRIMARY KEY (`id_kunjungan`);
 
 --
--- Indeks untuk tabel `mengajar`
+-- Indexes for table `mengajar`
 --
 ALTER TABLE `mengajar`
   ADD PRIMARY KEY (`id_mengajar`),
   ADD KEY `mengajar` (`id_pegawai`);
 
 --
--- Indeks untuk tabel `pegawai`
+-- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id_pegawai`);
+
 --
 -- Indexes for table `pelatihan`
 --
@@ -383,69 +382,69 @@ ALTER TABLE `pelatihan`
   ADD KEY `fk_pelatihan_sk` (`id_pegawai`);
 
 --
--- Indeks untuk tabel `pendidikan`
+-- Indexes for table `pendidikan`
 --
 ALTER TABLE `pendidikan`
   ADD PRIMARY KEY (`id_pendidikan`),
   ADD KEY `fk_pendidikan_pegawai` (`id_pegawai`);
 
 --
--- Indeks untuk tabel `tpp`
+-- Indexes for table `tpp`
 --
 ALTER TABLE `tpp`
   ADD PRIMARY KEY (`id_tpp`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `absen`
+-- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
   MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `keluarga`
+-- AUTO_INCREMENT for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  MODIFY `id_keluarga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_keluarga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `kepangkatan`
+-- AUTO_INCREMENT for table `kepangkatan`
 --
 ALTER TABLE `kepangkatan`
   MODIFY `id_kepangkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kunjungan`
+-- AUTO_INCREMENT for table `kunjungan`
 --
 ALTER TABLE `kunjungan`
   MODIFY `id_kunjungan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `mengajar`
+-- AUTO_INCREMENT for table `mengajar`
 --
 ALTER TABLE `mengajar`
   MODIFY `id_mengajar` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pegawai`
+-- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `pelatihan`
@@ -454,35 +453,35 @@ ALTER TABLE `pelatihan`
   MODIFY `id_pelatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `pendidikan`
+-- AUTO_INCREMENT for table `pendidikan`
 --
 ALTER TABLE `pendidikan`
-  MODIFY `id_pendidikan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pendidikan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tpp`
+-- AUTO_INCREMENT for table `tpp`
 --
 ALTER TABLE `tpp`
   MODIFY `id_tpp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `keluarga`
+-- Constraints for table `keluarga`
 --
 ALTER TABLE `keluarga`
   ADD CONSTRAINT `fk_profil_keluarga` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kepangkatan`
+-- Constraints for table `kepangkatan`
 --
 ALTER TABLE `kepangkatan`
   ADD CONSTRAINT `fk_kepangkatan` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `mengajar`
+-- Constraints for table `mengajar`
 --
 ALTER TABLE `mengajar`
   ADD CONSTRAINT `mengajar` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -494,7 +493,7 @@ ALTER TABLE `pelatihan`
   ADD CONSTRAINT `fk_pelatihan_sk` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pendidikan`
+-- Constraints for table `pendidikan`
 --
 ALTER TABLE `pendidikan`
   ADD CONSTRAINT `fk_pendidikan_pegawai` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
